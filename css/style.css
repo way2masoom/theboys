@@ -1,0 +1,49 @@
+/* importing Google font  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.text {
+    font-family: poppins;
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: bolder;
+    padding: 15px 30px;
+    position: relative;
+    letter-spacing: 2px;
+    color: #111;
+
+
+}
+
+.text::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: inherit;
+    background-color: #FF3040;
+    color: #fff;
+    clip-path: polygon(0 0, 25% 0, 25% 100%, 0 100%);
+    animation: slide 1s ease-in-out alternate infinite;
+}
+
+/* For audio  */
+audio {
+    /* visibility: hidden; */
+    width: 135px;
+    height: 50px;
+}
+
+@keyframes slide {
+
+    to {
+        clip-path: polygon(75% 0, 100% 0, 100% 100%, 75% 100%);
+    }
+
+}
